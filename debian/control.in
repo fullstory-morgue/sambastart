@@ -2,7 +2,7 @@ Source: sambastart-kanotix
 Section: net
 Priority: optional
 Maintainer: Stefan Lippers-Hollmann <s.l-h@gmx.de>
-Build-Depends: @cdbs@, python2.3, python2.3-dev
+Build-Depends-Indep: @cdbs@, python2.3, python2.3-dev
 Standards-Version: 3.6.2
 
 Package: sambastart-kanotix
