@@ -1,0 +1,6 @@
+[Desktop Entry]
+Exec=/usr/sbin/sambastart start
+Icon=network_local
+Name[de]=Sambaserver starten
+Name=Start Samba Server
+Type=Application

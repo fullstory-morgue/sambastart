@@ -1,0 +1,4 @@
+sambastart-kanotix: binary-without-manpage kanotix-smbconfig
+sambastart-kanotix: binary-without-manpage kanotix-smbconfig.py
+sambastart-kanotix: binary-without-manpage sambastart
+sambastart-kanotix: unknown-section kanotix

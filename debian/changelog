@@ -1,0 +1,45 @@
+sambastart-kanotix (0.3.4) unstable; urgency=low
+
+  * fix python handling.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun,  3 Apr 2005 01:38:27 +0200
+
+sambastart-kanotix (0.3.3) unstable; urgency=low
+
+  * fix minor packaging related problems. 
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 23 Mar 2005 21:47:39 +0100
+
+sambastart-kanotix (0.3-2) unstable; urgency=low
+
+  * change packaging.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue,  1 Feb 2005 19:58:16 +0100
+
+sambastart-knoppix (0.3-2) unstable; urgency=low
+
+  * Created Shares-Subdirectory.
+
+ -- Fabian Franz <knx-@fabian-franz.de>  Sun, 27 Apr 2003 21:10:23 +0200
+
+sambastart-knoppix (0.3-1) unstable; urgency=low
+
+  * Added graphical gui by Chris Liechti <cliechti@gmx.net>
+
+ -- Fabian Franz <knx-@fabian-franz.de>  Sun, 27 Apr 2003 14:10:50 +0200
+
+sambastart-knoppix (0.2-1) unstable; urgency=low
+
+  * Major feature updates:
+  * Python script by Chris Liechti <cliechti@gmx.net>
+  * Reconfigured sambastart-script
+  * Added kde-servicemenus
+  
+ -- Fabian Franz <knx-@fabian-franz.de>  Sat, 26 Apr 2003 23:16:56 +0200
+
+sambastart-knoppix (0.1-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Fabian Franz <knx-sambastart@fabian-franz.de>  Fri, 25 Apr 2003 23:06:25 +0200
+

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Comment[de]=Samba Server (Windows-Freigaben verwalten)
+Comment=Samba Server (Configure Windows-Shares)
+Exec=/usr/sbin/sambastart
+Icon=network_local
+Name[de]=Freigaben verwalten
+Name=Configure Shares
+Type=Application

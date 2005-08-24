@@ -1,0 +1,21 @@
+# Kde-Servicemenu for sambastart-kanotix
+# 
+# GPL 
+#
+# by Fabian Franz <knx-sambastart@fabian-franz.de>
+
+[Desktop Entry] 
+ServiceTypes=inode/directory
+Actions=addshare;removeshare
+
+[Desktop Action addshare] 
+Name=Share this folder(s)
+Name[de]=Diese(n) Ordner freigeben
+Icon=share 
+Exec=/usr/sbin/sambastart add "%U" 
+
+[Desktop Action removeshare] 
+Name=Remove this share(s) (if shared)
+Name[de]=Diese Freigabe(n) löschen (wenn freigegeben)
+Icon=share 
+Exec=/usr/sbin/sambastart remove "%U" 

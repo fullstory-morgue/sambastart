@@ -1,0 +1,6 @@
+[Desktop Entry]
+Exec=/usr/sbin/sambastart stop
+Icon=network_local
+Name[de]=Sambaserver stoppen
+Name=Stop Samba Server
+Type=Application
