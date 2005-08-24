@@ -6,7 +6,7 @@ Build-Depends: cdbs (>= 0.4.23-1.1), build-essential, debhelper (>= 4.1.0), pyth
 Standards-Version: 3.6.2
 
 Package: sambastart-kanotix
-Architecture: any
+Architecture: all
 Depends: ${shlibs:Depends}, kanotix-setpassword, python2.3
 Provides: sambastart-knoppix
 Conflicts: sambastart-knoppix
