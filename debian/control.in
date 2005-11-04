@@ -11,5 +11,5 @@ Depends: ${shlibs:Depends}, kanotix-setpassword, python2.3
 Provides: sambastart-knoppix
 Conflicts: sambastart-knoppix
 Description: sambastartup script
- adds an sambastartup script to KANOTIX.
+ adds an samba startup script to KANOTIX.
  
