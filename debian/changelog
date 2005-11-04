@@ -1,8 +1,9 @@
-sambastart-kanotix (0.3.6) UNRELEASED; urgency=low
+sambastart-kanotix (0.3.6) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * clean up sources.
+  * switch from /mnt/ to /media/.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 24 Aug 2005 12:44:28 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri,  4 Nov 2005 19:07:01 +0100
 
 sambastart-kanotix (0.3.5) unstable; urgency=low
 

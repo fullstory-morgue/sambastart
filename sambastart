@@ -77,7 +77,7 @@ function old_behaviour
   #can be done with append to smb.conf as its always a fresh copy
   #(made above)
 if $DIALOG --title "$TITLE" --defaultno --yesno "$MESSAGE_EXPORTS" 10 60 ; then
-for HD in $(cut -d " " -f 2 /etc/fstab|grep /mnt) ; do
+for HD in $(cut -d " " -f 2 /etc/fstab|grep /media) ; do
 NAME=$(basename $HD)
 cat >>$SMBCONF <<EOF
 [$NAME]
