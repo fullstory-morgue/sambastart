@@ -1,9 +1,11 @@
-sambastart-kanotix (0.3.7) UNRELEASED; urgency=low
+sambastart-kanotix (0.3.7) unstable; urgency=low
 
-  * NOT RELEASED YET
   * fix linda errors.
+  * remove cdbs auto-update feature.
+  * remove knoppix virtual packages.
+  * bump compat level to 5.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri,  4 Nov 2005 19:11:50 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 17 Dec 2005 03:21:38 +0100
 
 sambastart-kanotix (0.3.6) unstable; urgency=low
 
