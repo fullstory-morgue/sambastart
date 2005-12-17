@@ -1,3 +1,9 @@
+sambastart-kanotix (0.3.8) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 17 Dec 2005 03:22:54 +0100
+
 sambastart-kanotix (0.3.7) unstable; urgency=low
 
   * fix linda errors.
