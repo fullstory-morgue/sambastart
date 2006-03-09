@@ -4,6 +4,15 @@
 # 
 # Modifications by Fabian Franz <knx-sambastart@fabian-franz.de>
 
+# override tool behaviour through distro-defaults
+
+FLL_DISTRO_NAME="Kanotix"
+FLL_LIVE_USER="knoppix"
+FLL_MOUNTPOINT="/KNOPPIX"
+
+[ -r /etc/default/distro ] && source /etc/default/distro
+
+
 # Some constants
 
 PATH="/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin"
@@ -22,8 +31,8 @@ function clean_exit
 trap clean_exit EXIT
 
 # Do not run from HD-Install
-if [ ! -d /KNOPPIX/etc ] ; then 
-	echo -e "FATAL ERROR!\nThis Kanotix script must not be run on a regular system.\nAborting."
+if [ ! -d ${FLL_MOUNTPOINT}/etc ] ; then 
+	echo -e "FATAL ERROR!\nThis ${FLL_DISTRO_NAME} script must not be run on a regular system.\nAborting."
 	exit 1
 fi
 
@@ -45,11 +54,11 @@ function setup
   case "$LANGUAGE" in
         de*) 
           TITLE="Konfiguration und Start von Samba"
-	  MESSAGE_EXPORTS="Dieses Skript gibt das Knopix-Heimatverzeichnis für Windowsrechner frei (wenn Sie das Passowrt kennen). Sollen auch alle anderen Partitionen freigegeben werden, so dass Windowsrechner lesend und schreibend darauf zugreifen können ?"
+	  MESSAGE_EXPORTS="Dieses Skript gibt das ${FLL_LIVE_USER}-Heimatverzeichnis für Windowsrechner frei (wenn Sie das Passowrt kennen). Sollen auch alle anderen Partitionen freigegeben werden, so dass Windowsrechner lesend und schreibend darauf zugreifen können ?"
 	  ;;
         *)   
 	  TITLE="Configure and start Samba"
-	  MESSAGE_EXPORTS="This script will share the kanotix-homedirectory for use by Windows-Maschines. (provided they know the password) Shall also all other partitions be exported so that they can be read and written from the remote machines?"
+	  MESSAGE_EXPORTS="This script will share the ${FLL_LIVE_USER}-homedirectory for use by Windows-Maschines. (provided they know the password) Shall also all other partitions be exported so that they can be read and written from the remote machines?"
   	  ;;
   esac
 
@@ -62,7 +71,7 @@ function setup
 
   #update samba config, make home writeable
   rm -f $SMBCONF
-  sed "s/read only = yes/read only = no/" /KNOPPIX$SMBCONF >$SMBCONF
+  sed "s/read only = yes/read only = no/" ${FLL_MOUNTPOINT}$SMBCONF >$SMBCONF
 
   #and finaly start the server
   /etc/init.d/samba start
