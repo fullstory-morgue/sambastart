@@ -1,3 +1,9 @@
+sambastart-kanotix (0.3.9) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 10 Mar 2006 00:42:51 +0100
+
 sambastart-kanotix (0.3.8) unstable; urgency=low
 
   * knoppix --> kanotix transition, thanks to x-un-i.
