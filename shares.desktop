@@ -16,6 +16,6 @@ Exec=/usr/sbin/sambastart add "%U"
 
 [Desktop Action removeshare] 
 Name=Remove this share(s) (if shared)
-Name[de]=Diese Freigabe(n) löschen (wenn freigegeben)
+Name[de]=Diese Freigabe(n) lÃ¶schen (wenn freigegeben)
 Icon=share 
 Exec=/usr/sbin/sambastart remove "%U" 

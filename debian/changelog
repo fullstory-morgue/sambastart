@@ -1,8 +1,9 @@
-sambastart-kanotix (0.3.9) UNRELEASED; urgency=low
+sambastart-kanotix (0.3.9) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * switch to utf-8.
+  * fix lintian errors.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 10 Mar 2006 00:42:51 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu,  2 Nov 2006 14:06:40 +0100
 
 sambastart-kanotix (0.3.8) unstable; urgency=low
 

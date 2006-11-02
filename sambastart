@@ -54,7 +54,7 @@ function setup
   case "$LANGUAGE" in
         de*) 
           TITLE="Konfiguration und Start von Samba"
-	  MESSAGE_EXPORTS="Dieses Skript gibt das ${FLL_LIVE_USER}-Heimatverzeichnis für Windowsrechner frei (wenn Sie das Passowrt kennen). Sollen auch alle anderen Partitionen freigegeben werden, so dass Windowsrechner lesend und schreibend darauf zugreifen können ?"
+	  MESSAGE_EXPORTS="Dieses Skript gibt das ${FLL_LIVE_USER}-Heimatverzeichnis fÃ¼r Windowsrechner frei (wenn Sie das Passowrt kennen). Sollen auch alle anderen Partitionen freigegeben werden, so dass Windowsrechner lesend und schreibend darauf zugreifen kÃ¶nnen ?"
 	  ;;
         *)   
 	  TITLE="Configure and start Samba"
