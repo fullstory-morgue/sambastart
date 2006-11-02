@@ -1,3 +1,9 @@
+sambastart-kanotix (0.3.11) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu,  2 Nov 2006 20:46:32 +0100
+
 sambastart-kanotix (0.3.10) unstable; urgency=low
 
   * remove /etc/sysconfig/ dependency.
