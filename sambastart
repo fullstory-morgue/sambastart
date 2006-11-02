@@ -15,17 +15,17 @@ FLL_MOUNTPOINT="/KNOPPIX"
 
 # Some constants
 
-PATH="/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin"
+PATH="/bin:/sbin:/usr/bin:/usr/sbin"
 export PATH
 
 SETUP_CONFIG="/etc/samba/sambastart-kanotix"
-SMBCONF=/etc/samba/smb.conf
+SMBCONF="/etc/samba/smb.conf"
 
-TMP=/tmp/sambastart.$$
+TMP="/tmp/sambastart.$$"
 
 function clean_exit
 {
-  [ -f "$TMP" ] && rm -f $TMP
+	[ -f "$TMP" ] && rm -f "$TMP"
 }
 
 trap clean_exit EXIT
@@ -38,10 +38,7 @@ fi
 
 # Setup dialog & co
 
-# LANG et al.
-[ -f /etc/sysconfig/i18n ] && . /etc/sysconfig/i18n
-
-[ "`id -u`" != "0" ] && exec sudo "$0" "$@"
+[ "`id -u`" != "0" ] && exec kanotix-su "$0" "$@"
 
 XDIALOG_HIGH_DIALOG_COMPAT=1
 export XDIALOG_HIGH_DIALOG_COMPAT
@@ -51,44 +48,44 @@ DIALOG="dialog"
 
 function setup
 {
-  case "$LANGUAGE" in
-        de*) 
-          TITLE="Konfiguration und Start von Samba"
-	  MESSAGE_EXPORTS="Dieses Skript gibt das ${FLL_LIVE_USER}-Heimatverzeichnis für Windowsrechner frei (wenn Sie das Passowrt kennen). Sollen auch alle anderen Partitionen freigegeben werden, so dass Windowsrechner lesend und schreibend darauf zugreifen können ?"
-	  ;;
-        *)   
-	  TITLE="Configure and start Samba"
-	  MESSAGE_EXPORTS="This script will share the ${FLL_LIVE_USER}-homedirectory for use by Windows-Maschines. (provided they know the password) Shall also all other partitions be exported so that they can be read and written from the remote machines?"
-  	  ;;
-  esac
+	case "$LANG" in
+		de*) 
+			TITLE="Konfiguration und Start von Samba"
+			MESSAGE_EXPORTS="Dieses Skript gibt das ${FLL_LIVE_USER}-Heimatverzeichnis für Windowsrechner frei (wenn Sie das Passowrt kennen). Sollen auch alle anderen Partitionen freigegeben werden, so dass Windowsrechner lesend und schreibend darauf zugreifen können ?"
+			;;
+		*)   
+			TITLE="Configure and start Samba"
+			MESSAGE_EXPORTS="This script will share the ${FLL_LIVE_USER}-homedirectory for use by Windows-Maschines. (provided they know the password) Shall also all other partitions be exported so that they can be read and written from the remote machines?"
+			;;
+	esac
 
-  # - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-  #stop server if running
-  /etc/init.d/samba stop
+	#stop server if running
+	/etc/init.d/samba stop
 
-  #make sure password is set
-  kanotix-setpassword
+	#make sure password is set
+	kanotix-setpassword
 
-  #update samba config, make home writeable
-  rm -f $SMBCONF
-  sed "s/read only = yes/read only = no/" ${FLL_MOUNTPOINT}$SMBCONF >$SMBCONF
+	#update samba config, make home writeable
+	rm -f "$SMBCONF"
+	sed "s/read only = yes/read only = no/" "${FLL_MOUNTPOINT}$SMBCONF" > "$SMBCONF"
 
-  #and finaly start the server
-  /etc/init.d/samba start
+	#and finally start the server
+	/etc/init.d/samba start
 
-  # touch special configuration file
-  touch $SETUP_CONFIG
+	# touch special configuration file
+	touch "$SETUP_CONFIG"
 }
 
 function old_behaviour
 {
-  #ask user and export hardisks if he decides to do so
-  #can be done with append to smb.conf as its always a fresh copy
-  #(made above)
-if $DIALOG --title "$TITLE" --defaultno --yesno "$MESSAGE_EXPORTS" 10 60 ; then
-for HD in $(cut -d " " -f 2 /etc/fstab|grep /media) ; do
-NAME=$(basename $HD)
-cat >>$SMBCONF <<EOF
+	#ask user and export hardisks if he decides to do so
+	#can be done with append to smb.conf as its always a fresh copy
+	#(made above)
+
+	if "$DIALOG" --title "$TITLE" --defaultno --yesno "$MESSAGE_EXPORTS" 10 60 ; then
+		for HD in $(cut -d " " -f 2 /etc/fstab|grep /media) ; do
+			NAME=$(basename "$HD")
+			cat >> "$SMBCONF" <<EOF
 [$NAME]
 	comment = $HD
 	browseable = yes
@@ -98,37 +95,36 @@ cat >>$SMBCONF <<EOF
 	preexec = /bin/mount $HD
 	postexec = /bin/umount $HD
 EOF
-done
-fi
+		done
+	fi
 
-#and finaly start the server
-/etc/init.d/samba start
+	#and finaly start the server
+	/etc/init.d/samba restart
 }
 
 function reload_samba
 {
-  # This does not harm, but starts samba if it is not running already
-  sudo /etc/init.d/samba start
-  /etc/init.d/samba reload
+	# This does not harm, but starts samba if it is not running already
+	/etc/init.d/samba restart
 }
 
 function remove_share
 {
-  NAME="$1"
+	NAME="$1"
 
-  #sambastart-helper $NAME 2>/dev/null > $TMP
-  kanotix-smbconfig -f $SMBCONF -n $NAME -s del 2>/dev/null > $TMP
-  [ $? -ne 0 ] && return 1
-  cp $TMP $SMBCONF
+	#sambastart-helper $NAME 2>/dev/null > $TMP
+	kanotix-smbconfig -f "$SMBCONF" -n "$NAME" -s del 2>/dev/null > "$TMP"
+	[ "$?" -ne 0 ] && return 1
+	cp "$TMP" "$SMBCONF"
 }
 
 function add_share
 {
-  NAME="$1"
-  COMMENT="$2"
-  # delete section if it exists
-  remove_share "$NAME"
-cat >>$SMBCONF <<EOF
+	NAME="$1"
+	COMMENT="$2"
+	# delete section if it exists
+	remove_share "$NAME"
+	cat >> "$SMBCONF" <<EOF
 [$NAME]
 	comment = $COMMENT
 	browseable = yes
@@ -136,51 +132,53 @@ cat >>$SMBCONF <<EOF
 	path = $COMMENT
 	writeable = yes
 EOF
-# Hm ... above thingie is still faster
-#kanotix-smbconfig -f $SMBCONF -n "$NAME" -c "$COMMENT" -p "$COMMENT" -w add
+	# Hm ... above thingie is still faster
+	#kanotix-smbconfig -f $SMBCONF -n "$NAME" -c "$COMMENT" -p "$COMMENT" -w add
 }
 
 function change_shares
 {
-  ACTION="$1"
-  while [ $# -gt 0 ]
-  do
-    shift
-    [ ! -d "$1" ] && continue
-    NAME=$(echo $1 | sed 's%/$%%g' | awk -F/ '{ printf("%s",substr($NF,0,13)) }' | sed 's/ /_/g')
-    [ "$1" = "/" ] && NAME="Root"
-    COMMENT="$1"
-    case $ACTION in
-	add)
-	  add_share "$NAME" "$COMMENT"
-	;;
-	remove)
-	  remove_share "$NAME"
-	;;
-    esac
-  done
+	ACTION="$1"
+	while [ "$#" -gt 0 ]; do
+		shift
+		[ ! -d "$1" ] && continue
+
+		NAME=$(echo $1 | sed 's%/$%%g' | awk -F/ '{ printf("%s",substr($NF,0,13)) }' | sed 's/ /_/g')
+		[ "$1" = "/" ] && NAME="Root"
+		COMMENT="$1"
+
+		case "$ACTION" in
+			add)
+				add_share "$NAME" "$COMMENT"
+				;;
+			remove)
+				remove_share "$NAME"
+				;;
+		esac
+	done
 }
 
 [ ! -r "$SETUP_CONFIG" ] && setup
 
 case "$1" in
 	start)
-	  /etc/init.d/samba start
-	;;
+		/etc/init.d/samba start
+		;;
 	add|remove)
-	  change_shares "$@"
-	  reload_samba
-	;;
+		change_shares "$@"
+		reload_samba
+		;;
 	setup|autoconfigure)
-	  setup
-	;;
+		setup
+		;;
 	stop|terminate)
-	  /etc/init.d/samba stop
-	;;
+		/etc/init.d/samba stop
+		;;
 	*)
-	  /etc/init.d/samba start
-	  kanotix-smbconfig
-	;;
+		/etc/init.d/samba start
+		kanotix-smbconfig
+		;;
 esac
 
 exit 0
+

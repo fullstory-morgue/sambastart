@@ -1,8 +1,12 @@
-sambastart-kanotix (0.3.10) UNRELEASED; urgency=low
+sambastart-kanotix (0.3.10) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * remove /etc/sysconfig/ dependency.
+  * fix spelling.
+  * proper escaping.
+  * re- indent.
+  * don't add /usr/X11R6/bin/ to search path.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu,  2 Nov 2006 14:10:38 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu,  2 Nov 2006 20:44:17 +0100
 
 sambastart-kanotix (0.3.9) unstable; urgency=low
 
