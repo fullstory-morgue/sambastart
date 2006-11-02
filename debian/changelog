@@ -1,3 +1,9 @@
+sambastart-kanotix (0.3.12) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu,  2 Nov 2006 20:58:14 +0100
+
 sambastart-kanotix (0.3.11) unstable; urgency=low
 
   * add dependency for kanotix-su.
