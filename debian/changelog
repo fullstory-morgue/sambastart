@@ -1,8 +1,8 @@
-sambastart-kanotix (0.3.12) UNRELEASED; urgency=low
+sambastart-kanotix (0.3.12) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * fix insecure tempfile handling.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu,  2 Nov 2006 20:58:14 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 10 Nov 2006 15:13:52 +0100
 
 sambastart-kanotix (0.3.11) unstable; urgency=low
 

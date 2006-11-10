@@ -21,7 +21,7 @@ export PATH
 SETUP_CONFIG="/etc/samba/sambastart-kanotix"
 SMBCONF="/etc/samba/smb.conf"
 
-TMP="/tmp/sambastart.$$"
+TMP="$(mktemp -p /tmp/ sambastart-XXXXXXXXXX)"
 
 function clean_exit
 {
