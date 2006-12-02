@@ -1,4 +1,4 @@
-sambastart-kanotix: binary-without-manpage kanotix-smbconfig
-sambastart-kanotix: binary-without-manpage kanotix-smbconfig.py
-sambastart-kanotix: binary-without-manpage sambastart
-sambastart-kanotix: unknown-section kanotix
+sambastart-sidux: binary-without-manpage sidux-smbconfig
+sambastart-sidux: binary-without-manpage sidux-smbconfig.py
+sambastart-sidux: binary-without-manpage sambastart
+sambastart-sidux: unknown-section sidux

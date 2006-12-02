@@ -6,7 +6,7 @@
 
 # override tool behaviour through distro-defaults
 
-FLL_DISTRO_NAME="Kanotix"
+FLL_DISTRO_NAME="Sidux"
 FLL_LIVE_USER="knoppix"
 FLL_MOUNTPOINT="/KNOPPIX"
 
@@ -18,7 +18,7 @@ FLL_MOUNTPOINT="/KNOPPIX"
 PATH="/bin:/sbin:/usr/bin:/usr/sbin"
 export PATH
 
-SETUP_CONFIG="/etc/samba/sambastart-kanotix"
+SETUP_CONFIG="/etc/samba/sambastart-sidux"
 SMBCONF="/etc/samba/smb.conf"
 
 TMP="$(mktemp -p /tmp/ sambastart-XXXXXXXXXX)"
@@ -38,7 +38,7 @@ fi
 
 # Setup dialog & co
 
-[ "`id -u`" != "0" ] && exec kanotix-su "$0" "$@"
+[ "`id -u`" != "0" ] && exec su-me "$0" "$@"
 
 XDIALOG_HIGH_DIALOG_COMPAT=1
 export XDIALOG_HIGH_DIALOG_COMPAT
@@ -63,7 +63,7 @@ function setup
 	/etc/init.d/samba stop
 
 	#make sure password is set
-	kanotix-setpassword
+	sidux-setpassword
 
 	#update samba config, make home writeable
 	rm -f "$SMBCONF"
@@ -113,7 +113,7 @@ function remove_share
 	NAME="$1"
 
 	#sambastart-helper $NAME 2>/dev/null > $TMP
-	kanotix-smbconfig -f "$SMBCONF" -n "$NAME" -s del 2>/dev/null > "$TMP"
+	sidux-smbconfig -f "$SMBCONF" -n "$NAME" -s del 2>/dev/null > "$TMP"
 	[ "$?" -ne 0 ] && return 1
 	cp "$TMP" "$SMBCONF"
 }
@@ -176,7 +176,7 @@ case "$1" in
 		;;
 	*)
 		/etc/init.d/samba start
-		kanotix-smbconfig
+		sidux-smbconfig
 		;;
 esac
 

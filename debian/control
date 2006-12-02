@@ -1,13 +1,14 @@
-Source: sambastart-kanotix
+Source: sambastart-sidux
 Section: net
 Priority: optional
 Maintainer: Stefan Lippers-Hollmann <s.l-h@gmx.de>
 Build-Depends: cdbs (>= 0.4.23-1.1), debhelper (>= 5.0.0), python2.4, python2.4-dev
 Standards-Version: 3.7.2
 
-Package: sambastart-kanotix
+Package: sambastart-sidux
 Architecture: all
-Depends: ${shlibs:Depends}, kanotix-setpassword, python2.4, kanotix-su
+Depends: ${shlibs:Depends}, sidux-setpassword, python2.4, su-me
+Conflicts: sambastart-kanotix
 Description: sambastartup script
- adds an samba startup script to KANOTIX.
+ adds an samba startup script to Sidux.
  

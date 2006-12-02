@@ -1,6 +1,6 @@
 sambastart		usr/sbin/
-kanotix-smbconfig.py	usr/sbin/
-.directory		usr/share/applnk/Kanotix/Services/Shares/
-samba*.desktop		usr/share/applnk/Kanotix/Services/Shares/
+sidux-smbconfig.py	usr/sbin/
+.directory		usr/share/applnk/sidux/Services/Shares/
+samba*.desktop		usr/share/applnk/sidux/Services/Shares/
 shares.desktop		usr/share/apps/konqueror/servicemenus/
-kanotix/*.py		usr/lib/python2.3/site-packages/kanotix/
+sidux/*.py		usr/lib/python2.3/site-packages/sidux/
