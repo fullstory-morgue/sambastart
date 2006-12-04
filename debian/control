@@ -10,5 +10,5 @@ Architecture: all
 Depends: ${shlibs:Depends}, sidux-setpassword, python2.4, su-me
 Conflicts: sambastart-kanotix
 Description: sambastartup script
- adds an samba startup script to Sidux.
+ adds an samba startup script to sidux.
  
