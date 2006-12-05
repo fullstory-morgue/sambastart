@@ -1,11 +1,13 @@
-sambastart-sidux (0.3.13) UNRELEASED; urgency=low
+sambastart-sidux (0.3.13) unstable; urgency=low
 
-  * NOT RELEASED YET
-
+  [ Joaquim Boura ]
   * Initial version for sidux
   * fixed mispelling
 
- -- Joaquim Boura <x-un-i@sidux.com>  Mon,  4 Dec 2006 14:46:58 +0100
+  [ Stefan Lippers-Hollmann ]
+  * minor debian/control cosmetics.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue,  5 Dec 2006 13:41:52 +0100
 
 sambastart-kanotix (0.3.12) unstable; urgency=low
 
