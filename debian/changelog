@@ -2,7 +2,10 @@ sambastart-sidux (0.3.14) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue,  5 Dec 2006 13:43:29 +0100
+  * changed to python 2.4
+  * use sidux as ths python name for the package
+
+ -- Joaquim Boura <x-un-i@sidux.com>  Mon, 11 Dec 2006 00:47:06 +0100
 
 sambastart-sidux (0.3.13) unstable; urgency=low
 

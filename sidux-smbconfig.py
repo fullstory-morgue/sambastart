@@ -1,4 +1,4 @@
-#!/usr/bin/env python2.3
+#!/usr/bin/python
 
 import sys, re
 re_section = re.compile("\[(.*?)\]")
@@ -6,7 +6,7 @@ re_comment = re.compile("comment[\t ]*=(.*)")
 re_path    = re.compile("path[\t ]*=(.*)")
 
 #--
-_locale_domain = "kanotix-smbconfig"
+_locale_domain = "sidux-smbconfig"
 _locale_dir = "/usr/share/locale"
 
 try:
@@ -105,7 +105,7 @@ class SMBConf:
 		self.changed = 1
 	
 if __name__ == '__main__':
-	from kanotix import knxui, knxoptions
+	from sidux import knxui, knxoptions
 	class Options(knxoptions.Options):
 		optParameters = [
 		    ['name',      'n', None, _('Name of the share')],

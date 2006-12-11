@@ -3,4 +3,4 @@ sidux-smbconfig.py	usr/sbin/
 .directory		usr/share/applnk/sidux/Services/Shares/
 samba*.desktop		usr/share/applnk/sidux/Services/Shares/
 shares.desktop		usr/share/apps/konqueror/servicemenus/
-sidux/*.py		usr/lib/python2.3/site-packages/sidux/
+sidux/*.py		usr/lib/python2.4/site-packages/sidux/
