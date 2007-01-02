@@ -7,10 +7,10 @@
 # override tool behaviour through distro-defaults
 
 FLL_DISTRO_NAME="sidux"
-FLL_LIVE_USER="knoppix"
-FLL_MOUNTPOINT="/KNOPPIX"
+FLL_LIVE_USER="sidux"
+FLL_MOUNTPOINT="/SIDUX"
 
-[ -r /etc/default/distro ] && source /etc/default/distro
+[ -r /etc/default/distro ] && . /etc/default/distro
 
 
 # Some constants
