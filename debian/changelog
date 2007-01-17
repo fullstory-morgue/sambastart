@@ -1,8 +1,9 @@
-sambastart-sidux (0.3.16) UNRELEASED; urgency=low
+sambastart-sidux (0.3.16) ORPHANED; urgency=low
 
   * NOT RELEASED YET
+  * ORPHAN PACKAGE.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue,  2 Jan 2007 15:39:09 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 17 Jan 2007 17:47:10 +0100
 
 sambastart-sidux (0.3.15) unstable; urgency=low
 
